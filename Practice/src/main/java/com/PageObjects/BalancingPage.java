@@ -3,20 +3,30 @@ package com.PageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class BalancingPage {
+import util.Wrapper;
 
-	WebDriver driver;
+public class BalancingPage extends Wrapper {
+
+	//public WebDriver driver;
 
 	public BalancingPage(WebDriver driver) {
-		this.driver=driver;
+		//this.driver=driver;
+		PageFactory.initElements(driver, this);
 	}
+	@FindBy(xpath="//p[text()='Balancing']")
+	public WebElement balancing;
 
-	@FindBy(xpath="//a[@class='active_link'][contains(text(),'DISBSAD')]")
+	public void clickOnBalancing() {
+		clickonElement(balancing);
+	}
+	
+	@FindBy(xpath="//a[text()=' DISBSAD ']")
 	public WebElement dISBSAD;
 
 	public void clickOnDisbsad() {
-		dISBSAD.click();
+		clickonElement(dISBSAD);
 	}
 
 }
