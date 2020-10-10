@@ -1,8 +1,6 @@
 package com.PageObjects;
 
 
-import static org.testng.Assert.assertTrue;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,21 +14,21 @@ public class DisbsadPage extends BalancingPage {
 		super(driver);
 		PageFactory.initElements(driver, this);	}
 
-			
-	 @FindBy(xpath="//p[contains(text(),'Disaggregated Balancing Services Adjustment Data')]")
+	
+	 @FindBy(xpath="//p[text(),'Disaggregated Balancing Services Adjustment Data']")
 	 private WebElement HeaderText;
 	 
-	 public void verifyHeader() {
+	 /*public void verifyHeader() {
 		 String getheaderText= HeaderText.getText();
-		// assertEquals("Disaggregated Balancing Services Adjustment Data", (getheaderText)); 
-		 assertTrue("Disaggregated Balancing Services Adjustment Data".equalsIgnoreCase(getheaderText));
-	 }
+		//assertEquals("Disaggregated Balancing Services Adjustment Data", (getheaderText)); 
+		assertTrue("Disaggregated Balancing Services Adjustment Data".equalsIgnoreCase(getheaderText));
+	 }*/
 	 
 	 @FindBy(xpath="//img[@class='datepicker-trigger cal-img-disbsad']")
 	 private WebElement SelectDatePicker;
 	 
 	 public void clickOnCalender(){
-		 SelectDatePicker.click();		 
+		 clickonElement(SelectDatePicker);		 
 	 }
 	 
 	 @FindBy(xpath="//select[@class='ui-datepicker-month']")
@@ -56,24 +54,28 @@ public class DisbsadPage extends BalancingPage {
 	 private WebElement selectDay;
 	 
 	 public void clickOnDay(){
-		 selectDay.click();
+		 clickonElement(selectDay);
 	 }
 	 
-	 @FindBy(className="sp-img-new1 bal_disbsad")
-      private WebElement selectSettlementPeriod;
+	 @FindBy(xpath="//body/div[4]/div[1]/section[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/img[1]")
+      private WebElement clickSettlementPeriod;
 	 
-	 public void selectSettlementPeriod(){
-		 
-		 	Select selectSettlementPeriodObj= new Select(selectSettlementPeriod);
-		 	selectSettlementPeriodObj.selectByValue("ALL");
+	 public void clickSettlementPeriod(){
+	 clickonElement(clickSettlementPeriod);}
 	 
+	 @FindBy(xpath="//p[text()='ALL']")
+     private WebElement selectSettlementPeriodAll;
+	 
+	 public void selectSettlementPeriodAll(){
+		 clickonElement(selectSettlementPeriodAll);
+	
 	 }
 	 
 	 @FindBy(xpath="//input[@id='edit-view']")
 	 private WebElement clickOnView;
 	 
 	 public void clickOnViewbtn(){
-		 clickOnView.click();		 
+		 clickonElement(clickOnView);		 
 	 }
 	 
 }

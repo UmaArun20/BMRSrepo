@@ -1,10 +1,10 @@
 package util;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 //import org.testng.xml.dom.Wrapper;
+import org.testng.annotations.DataProvider;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -23,6 +23,13 @@ public class BaseClass{
 			driver.quit();
 			
 	
+	}
+	
+	@DataProvider(name="abc")
+	public static String[][] iterateExcel() throws Exception{
+		return Wrapper.getExcelData();
+		
+		
 	}
 	
 }

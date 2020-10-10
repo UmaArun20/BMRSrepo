@@ -17,7 +17,7 @@ public class B1780Page extends BalancingPage {
 		PageFactory.initElements(driver, this);	}
 
 			
-	 @FindBy(xpath="//div[@class='section-details']//p[contains(text(),'Aggregated Imbalance Volumes')]")
+	 @FindBy(xpath="//a[text()=' Aggregated Imbalance Volumes (B1780) - 17.1h']")
 	 private WebElement B1780HeaderText;
 	 
 	 public void verifyHeader() {
@@ -31,7 +31,7 @@ public class B1780Page extends BalancingPage {
 	 private WebElement clickOnView;
 	 
 	 public void clickOnViewbtn(){
-		 clickOnView.click();		 
+		 clickonElement(clickOnView);		 
 	 }
 	 
 }

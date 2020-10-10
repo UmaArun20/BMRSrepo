@@ -11,13 +11,14 @@ public class Balancing_Page_Tests extends BaseClass {
 		
 	BalancingPage BPage;
 
-	@Test
-	void OpenbalancingPageAndClickDisBad() {
-
+	@Test(dataProvider = "abc")
+	void OpenbalancingPageAndClickDisBad(String a,String b) {
+		
+		System.out.println(a+b);
 		
 		BPage = new BalancingPage(driver);
 		BPage.clickOnBalancing();
-		BPage.clickOnDisbsad();
+		//BPage.clickOnDisbsad();
 	
 	}
 	

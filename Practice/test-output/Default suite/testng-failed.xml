@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Balancing_Page_Tests">
+      <class name="test.Disbsad_Page_Test">
         <methods>
-          <include name="OpenbalancingPageAndClickDisBad"/>
+          <include name="OpenDisBsadAndViewTable"/>
           <include name="beforeTest"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- test.Balancing_Page_Tests -->
+      </class> <!-- test.Disbsad_Page_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

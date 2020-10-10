@@ -28,5 +28,4 @@ public class BalancingPage extends Wrapper {
 	public void clickOnDisbsad() {
 		clickonElement(dISBSAD);
 	}
-
 }

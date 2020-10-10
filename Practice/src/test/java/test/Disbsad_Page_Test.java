@@ -1,24 +1,28 @@
 package test;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import com.PageObjects.BalancingPage;
 import com.PageObjects.DisbsadPage;
 
-	public class Disbsad_Page_Test{
-	    static WebDriver driver;
-	
+import util.BaseClass;
+
+	public class Disbsad_Page_Test extends BaseClass{
+	  	
 		@Test
 		public void OpenDisBsadAndViewTable() throws InterruptedException {
 	
 			
-			DisbsadPage DPage = PageFactory.initElements(driver, DisbsadPage.class);
-					 
-			DPage.clickOnDisbsad();
-			DPage.verifyHeader();
+			//DisbsadPage DPage = PageFactory.initElements(driver, DisbsadPage.class);
+			//BalancingPage BPage = new BalancingPage(driver);
+			DisbsadPage DPage = new DisbsadPage(driver);
+
+			DPage.clickOnBalancing();
 			Thread.sleep(3000);
-		    DPage.clickOnCalender();
+			DPage.clickOnDisbsad();
+			//DPage.verifyHeader();
+			Thread.sleep(3000);
+			DPage.clickOnCalender();
 		    Thread.sleep(3000);
 		    DPage.selectMonth();
 		    Thread.sleep(3000);
@@ -26,7 +30,9 @@ import com.PageObjects.DisbsadPage;
 		    Thread.sleep(3000);
 		    DPage.clickOnDay();
 		    Thread.sleep(3000);
-		    DPage.selectSettlementPeriod();
+		    DPage.clickSettlementPeriod();
+		    Thread.sleep(3000);
+		    DPage.selectSettlementPeriodAll();
 		    Thread.sleep(3000);
 		    DPage.clickOnViewbtn();
 		    Thread.sleep(3000);
