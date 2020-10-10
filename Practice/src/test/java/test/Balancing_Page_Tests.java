@@ -11,6 +11,8 @@ public class Balancing_Page_Tests extends BaseClass {
 		
 	BalancingPage BPage;
 
+	
+	
 	@Test(dataProvider = "abc")
 	void OpenbalancingPageAndClickDisBad(String a,String b) {
 		
