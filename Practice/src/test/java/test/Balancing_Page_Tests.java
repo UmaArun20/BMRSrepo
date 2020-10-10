@@ -13,7 +13,7 @@ public class Balancing_Page_Tests extends BaseClass {
 
 	
 	
-	@Test(dataProvider = "abc")
+	@Test(dataProvider = "abdc")
 	void OpenbalancingPageAndClickDisBad(String a,String b) {
 		
 		System.out.println(a+b);
