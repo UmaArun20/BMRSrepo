@@ -20,7 +20,7 @@ public class Balancing_Page_Tests extends BaseClass {
 		
 		BPage = new BalancingPage(driver);
 		BPage.clickOnBalancing();
-		//BPage.clickOnDisbsad();
+		BPage.clickOnDisbsad();
 	
 	}
 	
